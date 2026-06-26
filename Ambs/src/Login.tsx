@@ -6,6 +6,8 @@ import logo from "./images/PCAmb.png";
 
 export default function Login() {
   const [showPassword] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <Box
@@ -36,15 +38,34 @@ export default function Login() {
             mb: 2,
           }}
         />
-        <TextField fullWidth label="Usuário" margin="normal" />
+        <TextField
+          fullWidth
+          label="Usuário"
+          margin="normal"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
         <TextField
           fullWidth
           label="Senha"
           type={showPassword ? "text" : "password"}
           margin="normal"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Button fullWidth variant="contained" sx={{ mt: 3 }}>
+        <Button
+          fullWidth
+          variant="contained"
+          sx={{ mt: 3 }}
+          onClick={() => {
+            if (username === "admin" && password === "admin") {
+              window.location.href = "/home";
+            } else {
+              alert("Usuário ou senha incorretos!");
+            }
+          }}
+        >
           Entrar
         </Button>
 
