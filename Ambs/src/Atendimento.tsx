@@ -19,6 +19,7 @@ import { Save, Clear } from "@mui/icons-material";
 import { useState } from "react";
 
 export default function Atendimento() {
+  const [checkedAcompanhante, setCheckedAcompanhante] = useState(false);
   const situacoes = [
     {
       id: "acamado",
@@ -145,7 +146,6 @@ export default function Atendimento() {
                   }
                 />
               </Grid>
-
               <Grid size={{ xs: 12, sm: 3 }}>
                 <TextField
                   fullWidth
@@ -162,11 +162,17 @@ export default function Atendimento() {
                   }}
                 />
               </Grid>
-
               <Grid size={{ xs: 12, sm: 2 }}>
                 <FormGroup>
                   <FormControlLabel
-                    control={<Checkbox />}
+                    control={
+                      <Checkbox
+                        checked={checkedAcompanhante}
+                        onChange={(e) =>
+                          setCheckedAcompanhante(e.target.checked)
+                        }
+                      />
+                    }
                     label="Acompanhante"
                   />
                 </FormGroup>
@@ -199,7 +205,6 @@ export default function Atendimento() {
                   }}
                 />
               </Grid>
-
               <Grid size={{ xs: 12, sm: 8 }}>
                 <TextField
                   fullWidth
@@ -214,7 +219,6 @@ export default function Atendimento() {
                   }
                 />
               </Grid>
-
               <Grid size={{ xs: 12, sm: 2 }}>
                 <TextField
                   fullWidth
@@ -229,7 +233,6 @@ export default function Atendimento() {
                   }
                 />
               </Grid>
-
               <Grid size={{ xs: 12, sm: 5 }}>
                 <TextField
                   fullWidth
@@ -244,7 +247,6 @@ export default function Atendimento() {
                   }
                 />
               </Grid>
-
               <Grid size={{ xs: 12, sm: 5 }}>
                 <TextField
                   fullWidth
@@ -259,7 +261,6 @@ export default function Atendimento() {
                   }
                 />
               </Grid>
-
               <Grid size={{ xs: 12, sm: 2 }}>
                 <TextField
                   fullWidth
@@ -274,7 +275,6 @@ export default function Atendimento() {
                   }
                 />
               </Grid>
-
               <Grid size={{ xs: 12, sm: 10 }}>
                 <TextField
                   fullWidth
@@ -289,7 +289,6 @@ export default function Atendimento() {
                   }
                 />
               </Grid>
-
               <Grid size={{ xs: 12 }}>
                 <TextField
                   select
@@ -311,7 +310,6 @@ export default function Atendimento() {
                   ))}
                 </TextField>
               </Grid>
-
               <Grid size={{ xs: 12 }}>
                 <TextField
                   fullWidth
