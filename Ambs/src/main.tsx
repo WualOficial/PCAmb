@@ -2,10 +2,10 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 //import Login from "./Login";
-import Atendimento from "./Atendimento";
+import Home from "./Home";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Atendimento />
+    <Home />
   </StrictMode>,
 );
